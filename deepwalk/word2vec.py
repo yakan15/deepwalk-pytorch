@@ -120,6 +120,7 @@ class ModWord2Vec():
         return idx2vec
 
     def save_emb(self, savepath, num_nodes):
+        print(self.word2idx)
         perm = np.array([self.word2idx[str(word)] for word in range(num_nodes)])
         emb = self.idx2vec[perm]
         np.save(savepath , emb)
